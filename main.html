@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Grid</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f0f0f0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .video {
+            background-color: #ccc;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Video Grid</h1>
+    <div class="grid">
+        <div class="video" onclick="playVideo('Video1.mp4')">Video 1</div>
+        <div class="video" onclick="playVideo('Video2.mp4')">Video 2</div>
+        <div class="video" onclick="playVideo('Video3.mp4')">Video 3</div>
+        <div class="video" onclick="playVideo('Video4.mp4')">Video 4</div>
+        <div class="video" onclick="playVideo('Video5.mp4')">Video 5</div>
+        <div class="video">Video 2</div>
+        <div class="video">Video 3</div>
+        <div class="video">Video 4</div>
+        <div class="video">Video 5</div>
+        <div class="video">Video 6</div>
+        <div class="video">Video 7</div>
+        <div class="video">Video 8</div>
+    </div>
+</body>
+</html>

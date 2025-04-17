@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: black;
+        }
+        #loadingScreen {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        #logo {
+            display: none;
+            opacity: 0;
+            transition: opacity 2s;
+        }
+    </style>
+</head>
+<body>
+    <div id="loadingScreen">
+        <img id="logo" src="ico.png" alt="Logo">
+    </div>
+    <script>
+        window.onload = function() {
+            const loadingScreen = document.getElementById('loadingScreen');
+            const logo = document.getElementById('logo');
+            logo.style.display = 'block';
+            setTimeout(() => {
+                logo.style.opacity = 1;
+            }, 100); // Start fading in after a short delay
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+                // Redirect to the main site (replace 'main.html' with your actual main page)
+window.location.href = 'main.html'; // Redirect to the main site
+            }, 5000); // 3 seconds for fade-in + 2 seconds before redirect
+        };
+    </script>
+</body>
+</html>

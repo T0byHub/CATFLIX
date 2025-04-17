@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        video {
+            width: 80%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+        .video-menu {
+            margin-bottom: 20px;
+        }
+        .video-menu button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video Player</h1>
+    <div class="video-menu">
+        <button onclick="playVideo('Video1.mp4')">Video 1</button>
+        <button onclick="playVideo('Video2.mp4')">Video 2</button>
+        <button onclick="playVideo('Video3.mp4')">Video 3</button>
+        <button onclick="playVideo('Video4.mp4')">Video 4</button>
+        <button onclick="playVideo('Video5.mp4')">Video 5</button>
+    </div>
+    <video id="videoPlayer" controls>
+        <source id="videoSource" src="" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <script>
+        function playVideo(videoFile) {
+            const videoSource = document.getElementById('videoSource');
+            videoSource.src = videoFile;
+            const videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.load();
+            videoPlayer.play();
+        }
+    </script>
+</body>
+</html>
