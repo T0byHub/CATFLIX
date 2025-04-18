@@ -11,7 +11,8 @@
             align-items: center;
             flex-direction: column;
             height: 100vh;
-            background-color: #f0f0f0;
+            background-color: black;
+            color: red;
         }
         video {
             width: 80%;
@@ -25,6 +26,10 @@
             margin: 5px;
             padding: 10px;
             font-size: 16px;
+            color: red;
+            background-color: black;
+            border: 1px solid red;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -49,6 +54,15 @@
             videoPlayer.load();
             videoPlayer.play();
         }
+
+        // Parse query parameter and auto-play video on page load
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const videoFile = urlParams.get('video');
+            if (videoFile) {
+                playVideo(videoFile);
+            }
+        };
     </script>
 </body>
 </html>
